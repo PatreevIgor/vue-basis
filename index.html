@@ -9,6 +9,8 @@
     <div id="app">
 
       <h2>
+        <a v-bind:href="url">Google</a>
+        <!-- short syntax: -->
         <a :href="url">Google</a>
       </h2>
 
@@ -16,6 +18,8 @@
         Counter: {{ counter }}
       </h2>
 
+      <button v-on:click="counter++">Rise</button>
+      <!-- short syntax: -->
       <button @click="counter++">Rise</button>
     </div>
 
