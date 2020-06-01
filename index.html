@@ -7,6 +7,16 @@
   </head>
   <body>
     <div id="app">
+      <h2>
+        <!-- Модификатор prevent - отменяет действие (в этом случае клик) -->
+        <a href="http://google.com" target="_blank" v-on:click.prevent="">Google link</a>
+      </h2>
+
+      <h2 v-on:mousemove="handleMouseMove">
+        X: {{ x }} \ Y: {{ y }}
+        <!-- Модификатор stop - отменяет действие (в этом случае функцию handleMouseMove) -->
+        <span v-on:mousemove.stop="">Не изменять</span>
+      </h2>
 
     </div>
 
@@ -16,10 +26,14 @@
       new Vue({
         el: '#app',
         data: {
-
+          x: 0,
+          y: 0
         },
         methods: {
-
+          handleMouseMove: function(event) {
+            this.x = event.clientX
+            this.y = event.clientY
+          }
         }
       })
 
