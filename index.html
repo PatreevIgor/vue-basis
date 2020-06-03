@@ -4,20 +4,27 @@
   <head>
     <meta charset="utf-8">
     <title>Vue JS</title>
+    <style>
+      .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 1px solid black;
+        display: inline-block;
+        margin: 40px;
+      }
+
+      .red {background: red;}
+      .blue {background: blue;}
+      .green {background: green;}
+    </style>
   </head>
   <body>
     <div id="app">
 
-      <!-- Two equals inputs: -->
-      <input type="text" v-model="InputValue">
-      <input type="text" @input="InputValue = $event.target.value" :value="InputValue">
+      <div class="circle"></div>
 
-      <!-- Input with modificator lazy (allow ignore parallel changing text and input value) -->
-      <input type="text" v-model.lazy="InputValue">
-
-      <h2>{{ InputValue }}</h2>
-
-    </div>
+     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
@@ -25,7 +32,7 @@
       new Vue({
         el: '#app',
         data: {
-          InputValue: 'Initial Value'
+
         },
         methods: {
 
