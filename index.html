@@ -8,19 +8,8 @@
   <body>
     <div id="app">
 
-      <h2>
-        <a v-bind:href="url">Google</a>
-        <!-- short syntax: -->
-        <a :href="url">Google</a>
-      </h2>
+      <input type="text">
 
-      <h2>
-        Counter: {{ counter }}
-      </h2>
-
-      <button v-on:click="counter++">Rise</button>
-      <!-- short syntax: -->
-      <button @click="counter++">Rise</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -29,8 +18,7 @@
       new Vue({
         el: '#app',
         data: {
-          counter: 0,
-          url: 'http://google.com'
+
         },
         methods: {
 
