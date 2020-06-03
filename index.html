@@ -8,7 +8,14 @@
   <body>
     <div id="app">
 
-      <input type="text">
+      <!-- Two equals inputs: -->
+      <input type="text" v-model="InputValue">
+      <input type="text" @input="InputValue = $event.target.value" :value="InputValue">
+
+      <!-- Input with modificator lazy (allow ignore parallel changing text and input value) -->
+      <input type="text" v-model.lazy="InputValue">
+
+      <h2>{{ InputValue }}</h2>
 
     </div>
 
@@ -18,7 +25,7 @@
       new Vue({
         el: '#app',
         data: {
-
+          InputValue: 'Initial Value'
         },
         methods: {
 
