@@ -22,13 +22,10 @@
   <body>
     <div id="app">
 
-      <div
-           class="circle"
-           @click="isActive = !isActive"
-           :class="getCssClasses"
-      ></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
 
-      <div class="circle" :class="[color, {'red': isActive}]"></div>
+      <hr>
 
       <input type="text" v-model="color">
 
@@ -40,18 +37,13 @@
       new Vue({
         el: '#app',
         data: {
-          isActive: false,
           color: 'blue'
         },
         computed: {
-          getCssClasses: function() {
-            return {
-              'red': this.isActive,
-              'green': !this.isActive
-            }
-          }
+
         },
         methods: {
+
         }
       })
 
